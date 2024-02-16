@@ -1,75 +1,24 @@
-# Nuxt 3 Minimal Starter
+# Nuxt.js & TailwindCSS Portfolio - With Dark Mode
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A portfolio website leveraging Nuxt, featuring my GitHub repos/contributions, as well as other projects I'm working on!
 
-## Setup
+## Demo URL
 
-Make sure to install the dependencies:
+Coming Soon!
 
-```bash
-# npm
-npm install
+## Features
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Simple and responsive design
+- [Nuxt.js](https://nuxtjs.org)
+- [Tailwind CSS v2](https://tailwindcss.com)
+- Theme Switcher with Dark Mode
+- Reusable components
+- Projects filter by category
+- Projects search by title
+- Vue transitions
+- Counter
+- Projects carousel
+- Smooth scroll
+- Dynamic forms
+- Back to top button
+- Download file button
