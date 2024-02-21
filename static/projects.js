@@ -4,7 +4,7 @@ export const projectsState = () => ({
   projectsDescription: 'Some of the projects I have successfully completed',
   projects: [
     {
-      id: '260d1271-f1f2-4bc9-a5eb-05a89c8cccdb',
+      id: '1',
       title: 'Google Health Platform',
       category: 'Web Application',
       img: 'images/web-project-2.jpg',

@@ -42,7 +42,7 @@
 }
 
 .font-general-extralight {
-  font-family: "GeneralSans-Extralight";
+  font-family: "GeneralSans-Extralight", serif;
 }
 
 @font-face {
@@ -56,7 +56,7 @@
 }
 
 .font-general-extralight-italic {
-  font-family: "GeneralSans-ExtralightItalic";
+  font-family: "GeneralSans-ExtralightItalic", serif;
 }
 
 @font-face {
@@ -154,7 +154,7 @@
 }
 
 .font-general-semibold {
-  font-family: "GeneralSans-Semibold";
+  font-family: "GeneralSans-Semibold", serif;
 }
 
 @font-face {
@@ -168,7 +168,7 @@
 }
 
 .font-general-semibold-italic {
-  font-family: "GeneralSans-SemiboldItalic";
+  font-family: "GeneralSans-SemiboldItalic", serif;
 }
 
 @font-face {

@@ -1,26 +1,19 @@
-<script>
-import feather from "feather-icons";
-import ProjectRelatedProjects from "../../components/projects/ProjectRelatedProjects.vue";
-export default {
-  components: { ProjectRelatedProjects },
-  scrollToTop: true,
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    project() {
-      return this.$store.getters.getProjectById(this.$route.params.id);
-    },
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
-  },
-};
+<script setup lang="ts">
+import { replace } from 'feather-icons'
+import ProjectRelatedProjects from '../../components/projects/ProjectRelatedProjects.vue'
+import { useProjectStore } from '~/store'
+import { IProject } from '~/d'
+
+const route = useRoute()
+const store = useProjectStore()
+const project: IProject | undefined = store.getProjectById(route.params.slug)
+
+onMounted(() => {
+  replace()
+})
+onUpdated(() => {
+  replace()
+})
 </script>
 
 <template>
@@ -30,17 +23,7 @@ export default {
       <!-- Project heading and meta info -->
       <div>
         <p
-          class="
-            font-general-medium
-            text-left text-3xl
-            sm:text-4xl
-            font-bold
-            text-primary-dark
-            dark:text-primary-light
-            mt-14
-            sm:mt-20
-            mb-7
-          "
+          class="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7"
         >
           {{ project.title }}
         </p>
@@ -51,13 +34,7 @@ export default {
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
             ></i>
             <span
-              class="
-                font-general-medium
-                ml-2
-                leading-none
-                text-primary-dark
-                dark:text-primary-light
-              "
+              class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ project.publishDate }}</span
             >
           </div>
@@ -67,13 +44,7 @@ export default {
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
             ></i>
             <span
-              class="
-                font-general-medium
-                ml-2
-                leading-none
-                text-primary-dark
-                dark:text-primary-light
-              "
+              class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ project.tag }}</span
             >
           </div>
@@ -90,6 +61,7 @@ export default {
           <img
             :src="projectImage.img"
             class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
+            alt="Project Image"
           />
         </div>
       </div>
@@ -101,12 +73,7 @@ export default {
           <!-- Single project client details -->
           <div class="mb-7">
             <p
-              class="
-                font-general-medium
-                text-2xl text-secondary-dark
-                dark:text-secondary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2"
             >
               {{ project.clientTitle }}
             </p>
@@ -114,17 +81,13 @@ export default {
               <li
                 v-for="info in project.companyInfos"
                 :key="info.id"
-                class="
-                  font-general-regular
-                  text-ternary-dark
-                  dark:text-ternary-light
-                "
+                class="font-general-regular text-ternary-dark dark:text-ternary-light"
               >
                 <span>{{ info.title }}: </span>
                 <a
                   href="#"
                   :class="
-                    info.title == 'Website' || info.title == 'Phone'
+                    info.title === 'Website' || info.title === 'Phone'
                       ? 'hover:underline cursor-pointer'
                       : ''
                   "
@@ -136,60 +99,37 @@ export default {
           </div>
 
           <!-- Single project objectives -->
-          <div class="mb-7">
+          <div v-if="project" class="mb-7">
             <p
-              class="
-                font-general-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ project.objectivesTitle }}
+              {{ project }}
             </p>
             <p
-              class="
-                font-general-regular
-                text-primary-dark
-                dark:text-ternary-light
-              "
+              class="font-general-regular text-primary-dark dark:text-ternary-light"
             >
               {{ project.objectivesDetails }}
             </p>
           </div>
 
           <!-- Single project technologies -->
-          <div class="mb-7">
+          <div v-if="project" class="mb-7">
             <p
-              class="
-                font-general-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.techTitle }}
             </p>
             <p
-              class="
-                font-general-regular
-                text-primary-dark
-                dark:text-ternary-light
-              "
+              class="font-general-regular text-primary-dark dark:text-ternary-light"
             >
-              {{ project.technologies.join(", ") }}
+              {{ project.technologies.join(', ') }}
             </p>
           </div>
 
           <!-- Single project social sharing -->
-          <div>
+          <div v-if="project">
             <p
-              class="
-                font-general-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.socialTitle }}
             </p>
@@ -200,17 +140,7 @@ export default {
                 :href="social.url"
                 target="__blank"
                 aria-label="Share Project"
-                class="
-                  bg-ternary-light
-                  dark:bg-ternary-dark
-                  text-gray-400
-                  hover:text-primary-dark
-                  dark:hover:text-primary-light
-                  p-2
-                  rounded-lg
-                  shadow-sm
-                  duration-500
-                "
+                class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
                 ><i
                   :data-feather="social.icon"
                   class="w-4 lg:w-5 h-4 lg:h-5"
@@ -221,28 +151,16 @@ export default {
         </div>
 
         <!-- Single project right section details -->
-        <div class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
+        <div v-if="project" class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
           <p
-            class="
-              font-general-medium
-              text-primary-dark
-              dark:text-primary-light
-              text-2xl
-              font-bold
-              mb-7
-            "
+            class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
           >
             {{ project.detailsTitle }}
           </p>
           <p
             v-for="projectDetail in project.projectDetails"
             :key="projectDetail.id"
-            class="
-              font-general-regular
-              mb-5
-              text-lg text-ternary-dark
-              dark:text-ternary-light
-            "
+            class="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
           >
             {{ projectDetail.details }}
           </p>

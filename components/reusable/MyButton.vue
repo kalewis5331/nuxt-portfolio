@@ -1,19 +1,19 @@
-<script>
+<script setup>
 import { defineProps } from 'vue'
 
-export default {
-  props: defineProps(['title']),
-  emits: ['click'],
-  data: () => {
-    return {
-      // @todo
-    }
+const props = defineProps({
+  title: {
+    default: '',
+    type: String,
+    required: true,
   },
-}
+})
+
+const emit = defineEmits(['click'])
 </script>
 
 <template>
-  <button @click="$emit('click')">{{ title }}</button>
+  <button @click="emit('click')">{{ props.title }}</button>
 </template>
 
 <style lang="scss" scoped></style>

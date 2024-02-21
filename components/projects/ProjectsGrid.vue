@@ -1,7 +1,7 @@
 <script>
-import feather from 'feather-icons'
+import { replace } from 'feather-icons'
 import { mapState } from 'pinia'
-import { useProjectStore } from '@/store/index.js'
+import { useProjectStore } from '~/store/index.ts'
 
 export default {
   data: () => {
@@ -12,7 +12,7 @@ export default {
     }
   },
   mounted() {
-    feather.replace()
+    replace()
   },
   // eslint-disable-next-line vue/order-in-components
   computed: {

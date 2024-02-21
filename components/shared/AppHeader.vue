@@ -1,7 +1,7 @@
 <script>
 import { mapState } from 'pinia'
 import AppNavigation from './AppNavigation.vue'
-import { useProjectStore } from '~/store/index.js'
+import { useProjectStore } from '~/store/index.ts'
 
 export default {
   components: {
@@ -53,17 +53,17 @@ export default {
           <NuxtLink to="/">
             <img
               v-if="$colorMode.value === 'dark'"
-              src="../../static/logo-light.svg"
+              src="/logo-light.svg"
               class="w-36"
               alt="Light Logo"
             />
-
             <img
-              v-else
-              src="../../static/logo-dark.svg"
-              alt="Color Logo"
+              v-else-if="$colorMode.value === 'system'"
+              src="/logo-light.svg"
               class="w-36"
+              alt="Light Logo"
             />
+            <img v-else src="/logo-dark.svg" alt="Color Logo" class="w-36" />
           </NuxtLink>
         </div>
 

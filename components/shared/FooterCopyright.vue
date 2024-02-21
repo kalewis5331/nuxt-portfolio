@@ -1,6 +1,6 @@
 <script>
 import { mapState } from 'pinia'
-import { useProjectStore } from '@/store/index.js'
+import { useProjectStore } from '~/store/index.ts'
 
 export default {
   data: () => {

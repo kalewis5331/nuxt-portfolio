@@ -3,56 +3,41 @@ export default {
   data: () => {
     return {
       relatedProject: {
-        relatedProjectsHeading: "Related Projects",
+        relatedProjectsHeading: 'Related Projects',
         relatedProjects: [
           {
             id: 1,
-            title: "Mobile UI",
-            img: require("@/static/images/mobile-project-1.jpg"),
+            title: 'Mobile UI',
+            img: require('public/images/mobile-project-1.jpg'),
           },
           {
             id: 2,
-            title: "Web Application",
-            img: require("@/static/images/web-project-1.jpg"),
+            title: 'Web Application',
+            img: require('public/images/web-project-1.jpg'),
           },
           {
             id: 3,
-            title: "UI Design",
-            img: require("@/static/images/ui-project-2.jpg"),
+            title: 'UI Design',
+            img: require('public/images/ui-project-2.jpg'),
           },
           {
             id: 4,
-            title: "Kabul Mobile App UI",
-            img: require("@/static/images/mobile-project-2.jpg"),
+            title: 'Kabul Mobile App UI',
+            img: require('public/images/mobile-project-2.jpg'),
           },
         ],
       },
-    };
+    }
   },
-};
+}
 </script>
 
 <template>
   <div
-    class="
-      mt-10
-      pt-10
-      sm:pt-14 sm:mt-20
-      border-t-2 border-primary-light
-      dark:border-secondary-dark
-    "
+    class="mt-10 pt-10 sm:pt-14 sm:mt-20 border-t-2 border-primary-light dark:border-secondary-dark"
   >
     <p
-      class="
-        font-general-regular
-        text-primary-dark
-        dark:text-primary-light
-        text-3xl
-        font-bold
-        mb-10
-        sm:mb-14
-        text-left
-      "
+      class="font-general-regular text-primary-dark dark:text-primary-light text-3xl font-bold mb-10 sm:mb-14 text-left"
     >
       {{ relatedProject.relatedProjectsHeading }}
     </p>
