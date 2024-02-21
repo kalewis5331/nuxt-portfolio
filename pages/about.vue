@@ -1,16 +1,16 @@
 <script>
-import feather from "feather-icons";
+import { replace } from 'feather-icons'
 
 export default {
-  name: "About",
+  name: 'About',
   scrollToTop: true,
   mounted() {
-    feather.replace();
+    replace()
   },
   updated() {
-    feather.replace();
+    replace()
   },
-};
+}
 </script>
 
 <template>

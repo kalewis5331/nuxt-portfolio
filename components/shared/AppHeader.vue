@@ -2,9 +2,11 @@
 import { mapState } from 'pinia'
 import AppNavigation from './AppNavigation.vue'
 import { useProjectStore } from '~/store/index.ts'
+import ReUseButton from '~/components/reusable/MyButton.vue'
 
 export default {
   components: {
+    ReUseButton,
     AppNavigation,
   },
   data: () => {
@@ -144,13 +146,7 @@ export default {
       >
         <!-- Hire me button -->
         <div class="font-general-medium hidden md:block">
-          <button
-            class="text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5"
-            aria-label="Hire Me Button"
-            @click="showModal()"
-          >
-            Hire Me
-          </button>
+          <ReUseButton title="Download Resume" />
         </div>
 
         <!-- Theme switcher large screen -->

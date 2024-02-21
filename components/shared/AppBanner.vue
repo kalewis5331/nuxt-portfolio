@@ -1,7 +1,9 @@
 <script>
 import { replace } from 'feather-icons'
+import ReUseButton from '~/components/reusable/MyButton.vue'
 
 export default {
+  components: { ReUseButton },
   data: () => {
     return {
       // Todo
@@ -37,17 +39,15 @@ export default {
         <NuxtLink
           to="https://profile.indeed.com/p/kevinl-k9n2cmz"
           target="_blank"
-          class="flex justify-center items-center w-60 sm:w-60 mt-6 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark p-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
+          class="flex justify-center items-center w-60 sm:w-60 mt-6 mb-6 sm:mb-0 p-2.5 sm:py-3"
           aria-label="Download Resume"
         >
           <!--          <i-->
           <!--            data-feather="arrow-down-circle"-->
           <!--            class="ml-0 sm:ml-1 mr-2 sm:mr-3 w-5 sm:w-6 duration-100"-->
           <!--          ></i>-->
-          <span class="text-sm sm:text-lg font-general-medium duration-100"
-            >View/Download Resume</span
-          ></NuxtLink
-        >
+          <ReUseButton title="Download Resume" />
+        </NuxtLink>
       </div>
     </div>
 
