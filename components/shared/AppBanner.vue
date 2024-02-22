@@ -1,9 +1,10 @@
 <script>
 import { replace } from 'feather-icons'
+import MyGitHub from '../github/MyGitHub.vue'
 import ReUseButton from '~/components/reusable/MyButton.vue'
 
 export default {
-  components: { ReUseButton },
+  components: { ReUseButton, MyGitHub },
   data: () => {
     return {
       // Todo
@@ -49,16 +50,24 @@ export default {
           <ReUseButton title="Download Resume" />
         </NuxtLink>
       </div>
+
+      <div>
+        <img
+          v-if="$colorMode.value === 'dark'"
+          src="/developer-dark.svg"
+          alt="Developer Dark"
+        />
+        <img v-else src="/developer.svg" alt="Developer Light" />
+      </div>
     </div>
 
     <!-- Banner right illustration -->
-    <div class="w-full md:w-2/3 text-right float-right">
-      <img
-        v-if="$colorMode.value === 'dark'"
-        src="/developer-dark.svg"
-        alt="Developer Dark"
-      />
-      <img v-else src="/developer.svg" alt="Developer Light" />
+    <div class="w-full md:w-2/3 text-primary-light float-right">
+      <Suspense>
+        <MyGitHub />
+
+        <template #fallback> Loading... </template>
+      </Suspense>
     </div>
   </section>
 </template>

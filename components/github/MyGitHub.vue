@@ -1,0 +1,62 @@
+<script setup lang="ts">
+import axios from 'axios'
+import { onMounted } from 'vue'
+import GithubReposItem from '~/components/github/GitHubRepoItem.vue'
+import type { LanguageTrending } from '~/d'
+
+const { data } = await useFetch('/api/github')
+const repos = data.value
+const getColors = async () => {
+  return await axios
+    .get(
+      'https://raw.githubusercontent.com/ozh/github-colors/master/colors.json',
+    )
+    .then((res) => {
+      return res.data
+    })
+    .catch((err) => {
+      console.log(err)
+      return []
+    })
+}
+
+const colors = ref({})
+
+onMounted(async () => {
+  colors.value = await getColors()
+})
+
+const getLanguageColor = (
+  language: string,
+  colors: LanguageTrending,
+): string => {
+  if (language && colors && colors[language]) {
+    return colors[language].color
+  } else {
+    return '#ffffff'
+  }
+}
+</script>
+
+<template>
+  <div class="container">
+    <header class="pt-4">
+      <h2 class="font-bold text-lg md:text-2xl">Github Repositories</h2>
+    </header>
+    <div
+      v-if="repos && repos.length > 0 && colors"
+      class="flex flex-wrap pt-4 md:-mr-6"
+    >
+      <div
+        v-for="repo in repos"
+        :key="repo.id"
+        class="w-full md:w-1/2 lg:w-1/3 md:pr-6 pb-4"
+      >
+        <GithubReposItem
+          :repository="repo"
+          :bg-color="getLanguageColor(repo.language, colors)"
+        />
+      </div>
+    </div>
+  </div>
+</template>

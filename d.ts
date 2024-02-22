@@ -4,6 +4,13 @@ export interface IClient {
   title: string
 }
 
+export type LanguageTrending = {
+  [language: string]: {
+    color: string
+    url: string
+  }
+}
+
 export interface IProject {
   id: string
   title: string
