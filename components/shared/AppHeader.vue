@@ -59,12 +59,6 @@ export default {
               class="w-36"
               alt="Light Logo"
             />
-            <img
-              v-else-if="$colorMode.value === 'system'"
-              src="/logo-light.svg"
-              class="w-36"
-              alt="Light Logo"
-            />
             <img v-else src="/logo-dark.svg" alt="Color Logo" class="w-36" />
           </NuxtLink>
         </div>

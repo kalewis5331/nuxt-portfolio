@@ -39,7 +39,7 @@ const getLanguageColor = (
 </script>
 
 <template>
-  <div class="container">
+  <div class="container h-96 overflow-y-scroll">
     <header class="pt-4">
       <h2
         class="font-bold text-lg md:text-2xl text-ternary-dark dark:text-primary-light"
@@ -54,7 +54,7 @@ const getLanguageColor = (
       <div
         v-for="repo in repos"
         :key="repo.id"
-        class="w-full md:w-1/2 lg:w-1/3 md:pr-6 pb-4"
+        class="w-full md:w-1/2 lg:w-1/2 md:pr-6 pb-4"
       >
         <GithubReposItem
           :repository="repo"
