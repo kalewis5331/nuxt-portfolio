@@ -24,7 +24,9 @@ export default {
 </script>
 
 <template>
-  <div class="border h-full rounded p-4 flex flex-col">
+  <div
+    class="border h-full rounded p-4 flex flex-col text-ternary-dark dark:text-primary-light"
+  >
     <div class="flex items-center">
       <svg
         viewBox="0 0 16 16"

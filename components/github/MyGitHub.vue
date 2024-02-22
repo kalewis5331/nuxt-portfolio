@@ -41,7 +41,11 @@ const getLanguageColor = (
 <template>
   <div class="container">
     <header class="pt-4">
-      <h2 class="font-bold text-lg md:text-2xl">Github Repositories</h2>
+      <h2
+        class="font-bold text-lg md:text-2xl text-ternary-dark dark:text-primary-light"
+      >
+        Github Repositories
+      </h2>
     </header>
     <div
       v-if="repos && repos.length > 0 && colors"
