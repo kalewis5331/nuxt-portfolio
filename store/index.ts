@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { projectsState } from '~/static/projects.js'
-import type { IProject } from '~/d'
+import type { IProject } from '~/interfaces/projects'
 
 export const useProjectStore = defineStore('projects', {
   state: projectsState,

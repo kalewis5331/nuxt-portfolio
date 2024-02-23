@@ -2,7 +2,7 @@
 import axios from 'axios'
 import { onMounted } from 'vue'
 import GithubReposItem from '~/components/github/GitHubRepoItem.vue'
-import type { LanguageTrending } from '~/d'
+import type { LanguageTrending } from '~/interfaces/projects'
 
 const { data } = await useFetch('/api/github')
 const repos = data.value
@@ -39,7 +39,7 @@ const getLanguageColor = (
 </script>
 
 <template>
-  <div class="container h-96 overflow-y-scroll">
+  <div class="container h-96 overflow-y-auto">
     <header class="pt-4">
       <h2
         class="font-bold text-lg md:text-2xl text-ternary-dark dark:text-primary-light"

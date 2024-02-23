@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
 export const projectsState = () => ({
   projectsHeading: 'Projects Portfolio',
-  projectsDescription: 'Some of the projects I have successfully completed',
+  projectsDescription: `Other projects I've worked on (e.g., Private Repos, Archived Side Projects)`,
   projects: [
     {
       id: '1',

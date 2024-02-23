@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IClient } from '~/d'
+import type { IClient } from '~/interfaces/projects'
 const clients: IClient[] = [{ id: 1, img: '', title: 'Self' }]
 </script>
 

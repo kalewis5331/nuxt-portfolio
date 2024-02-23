@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { replace } from 'feather-icons'
 import ProjectRelatedProjects from '../../components/projects/ProjectRelatedProjects.vue'
+import type { IProject } from '~/interfaces/projects'
 import { useProjectStore } from '~/store'
-import { IProject } from '~/d'
-
 const route = useRoute()
 const store = useProjectStore()
 const project: IProject | undefined = store.getProjectById(route.params.slug)
