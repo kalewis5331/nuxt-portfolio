@@ -5,7 +5,7 @@ import type { IProject } from '~/interfaces/projects'
 import { useProjectStore } from '~/store'
 const route = useRoute()
 const store = useProjectStore()
-const project: IProject | undefined = store.getProjectById(route.params.slug)
+const project: IProject | undefined = store.getProjectById(route.params.id)
 
 onMounted(() => {
   replace()
@@ -97,20 +97,6 @@ onUpdated(() => {
             </ul>
           </div>
 
-          <!-- Single project objectives -->
-          <div v-if="project" class="mb-7">
-            <p
-              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
-            >
-              {{ project }}
-            </p>
-            <p
-              class="font-general-regular text-primary-dark dark:text-ternary-light"
-            >
-              {{ project.objectivesDetails }}
-            </p>
-          </div>
-
           <!-- Single project technologies -->
           <div v-if="project" class="mb-7">
             <p
@@ -157,11 +143,9 @@ onUpdated(() => {
             {{ project.detailsTitle }}
           </p>
           <p
-            v-for="projectDetail in project.projectDetails"
-            :key="projectDetail.id"
             class="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
           >
-            {{ projectDetail.details }}
+            {{ project.details }}
           </p>
         </div>
       </div>

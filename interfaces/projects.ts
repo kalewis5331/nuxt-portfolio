@@ -19,10 +19,9 @@ export interface IProject {
   publishDate: string
   tag: string
   clientTitle: string
-  objectivesTitle: string
-  objectivesDetails: string
-  techTitle: string
   detailsTitle: string
+  techTitle: string
+  details: string
   socialTitle: string
   projectImages: {
     id: string
@@ -35,10 +34,6 @@ export interface IProject {
     details: string
   }[]
   technologies: string[]
-  projectDetails: {
-    id: string
-    details: string
-  }[]
   socialSharings: {
     id: string
     name: string

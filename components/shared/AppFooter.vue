@@ -1,20 +1,15 @@
-<script>
-import feather from 'feather-icons'
+<script setup lang="ts">
+import { replace } from 'feather-icons'
 import FooterCopyright from './FooterCopyright.vue'
-export default {
-  components: { FooterCopyright },
-  data: () => {
-    return {
-      // Todo
-    }
-  },
-  mounted() {
-    feather.replace()
-  },
-  updated() {
-    feather.replace()
-  },
-}
+import { useProjectStore } from '~/store'
+const store = useProjectStore()
+const socialSites = store.socialSharings
+onMounted(() => {
+  replace()
+})
+onUpdated(() => {
+  replace()
+})
 </script>
 
 <template>
@@ -30,27 +25,15 @@ export default {
           Follow me
         </p>
         <ul class="flex gap-4 sm:gap-8">
-          <!--          <a-->
-          <!--            v-for="social in socialProfiles"-->
-          <!--            :key="social.id"-->
-          <!--            :href="social.url"-->
-          <!--            target="__blank"-->
-          <!--            class="-->
-          <!--              text-gray-400-->
-          <!--              hover:text-indigo-500-->
-          <!--              dark:hover:text-indigo-400-->
-          <!--              cursor-pointer-->
-          <!--              rounded-lg-->
-          <!--              bg-gray-50-->
-          <!--              dark:bg-ternary-dark-->
-          <!--              hover:bg-gray-100-->
-          <!--              shadow-sm-->
-          <!--              p-4-->
-          <!--              duration-500-->
-          <!--            "-->
-          <!--          >-->
-          <!--            <i :data-feather="social.icon" class="w-6 sm:w-8 h-6 sm:h-8"></i>-->
-          <!--          </a>-->
+          <a
+            v-for="(social, index) in socialSites"
+            :key="index"
+            :href="social.url"
+            target="__blank"
+            class="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500"
+          >
+            <i :data-feather="social.icon" class="w-6 sm:w-8 h-6 sm:h-8"></i>
+          </a>
         </ul>
       </div>
 
