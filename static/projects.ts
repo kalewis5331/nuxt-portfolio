@@ -1,5 +1,10 @@
-import { v4 as uuidv4 } from 'uuid'
-export const projectsState = () => ({
+import type { IClient, IProjectState } from '~/interfaces/projects'
+import { clients } from '~/static/clients'
+
+const otaskuClient: IClient | undefined = clients.find(
+  (client) => client.id === 'otasku',
+)
+export const projectsState = (): IProjectState => ({
   projectsHeading: 'Projects Portfolio',
   projectsDescription: `Other projects I've worked on (e.g., Private Repos, Archived Side Projects)`,
   socialSharings: [
@@ -16,7 +21,7 @@ export const projectsState = () => ({
       category: 'Mobile Application',
       img: '/images/OtaskuSpamBlocker.png',
       publishDate: 'Mar, 2020',
-      tag: 'Mobile Application / Service',
+      tag: 'Mobile Application',
       clientTitle: 'About Client',
       detailsTitle: 'Details',
       details:
@@ -25,28 +30,11 @@ export const projectsState = () => ({
       socialTitle: 'Share This',
       projectImages: [
         {
-          id: uuidv4(),
           title: 'Otasku Spam Blocker Icon',
           img: '/images/OtaskuSpamBlocker.png',
         },
       ],
-      companyInfos: [
-        {
-          id: uuidv4(),
-          title: 'Name',
-          details: 'Otasku',
-        },
-        {
-          id: uuidv4(),
-          title: 'Services',
-          details: 'Android Application to block spam and unwanted calls.',
-        },
-        {
-          id: uuidv4(),
-          title: 'Website',
-          details: 'https://www.otasku.com/',
-        },
-      ],
+      client: otaskuClient,
       technologies: ['Java', 'Kotlin', 'Maven', 'Gradle', 'Android Studios'],
     },
   ],

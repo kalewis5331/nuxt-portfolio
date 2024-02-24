@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import axios from 'axios'
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import GithubReposItem from '~/components/github/GitHubRepoItem.vue'
 import type { LanguageTrending } from '~/interfaces/projects'
 
@@ -24,6 +24,10 @@ const colors = ref({})
 
 onMounted(async () => {
   colors.value = await getColors()
+})
+
+onUnmounted(() => {
+  colors.value = {}
 })
 
 const getLanguageColor = (

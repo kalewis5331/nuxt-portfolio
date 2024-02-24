@@ -53,14 +53,14 @@ onUpdated(() => {
       <!-- Project gallery -->
       <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12">
         <div
-          v-for="projectImage in project.projectImages"
-          :key="projectImage.id"
+          v-for="(projectImage, index) in project.projectImages"
+          :key="index"
           class="mb-10 sm:mb-0"
         >
           <img
             :src="projectImage.img"
             class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
-            alt="Project Image"
+            :alt="projectImage.title"
           />
         </div>
       </div>
@@ -68,9 +68,10 @@ onUpdated(() => {
       <!-- Project info -->
       <div class="block sm:flex gap-0 sm:gap-10 mt-14">
         <!-- Single project left section details -->
+
         <div class="w-full sm:w-1/3 text-left">
           <!-- Single project client details -->
-          <div class="mb-7">
+          <div v-if="project.client" class="mb-7">
             <p
               class="font-general-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2"
             >
@@ -78,11 +79,11 @@ onUpdated(() => {
             </p>
             <ul class="leading-loose">
               <li
-                v-for="info in project.companyInfos"
-                :key="info.id"
+                v-for="(info, index) in project.client.companyInfos"
+                :key="index"
                 class="font-general-regular text-ternary-dark dark:text-ternary-light"
               >
-                <span>{{ info.title }}: </span>
+                <span class="font-extrabold">{{ info.title }}: </span>
                 <a
                   href="#"
                   :class="
@@ -120,8 +121,8 @@ onUpdated(() => {
             </p>
             <div class="flex items-center gap-3 mt-5">
               <a
-                v-for="social in project.socialSharings"
-                :key="social.id"
+                v-for="(social, index) in store.socialSharings"
+                :key="index"
                 :href="social.url"
                 target="__blank"
                 aria-label="Share Project"

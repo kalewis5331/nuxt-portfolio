@@ -1,7 +1,10 @@
 export interface IClient {
-  id?: number
-  img: string
-  title: string
+  id: string
+  clientImages: Array<{ img: string; title: string }>
+  companyInfos: Array<{
+    title: string
+    details: string
+  }>
 }
 
 export type LanguageTrending = {
@@ -24,20 +27,20 @@ export interface IProject {
   details: string
   socialTitle: string
   projectImages: {
-    id: string
     title: string
     img: string
   }[]
-  companyInfos: {
-    id: string
-    title: string
-    details: string
-  }[]
+  client?: IClient
   technologies: string[]
-  socialSharings: {
-    id: string
+}
+
+export interface IProjectState {
+  projectsHeading: string
+  projectsDescription: string
+  socialSharings: Array<{
     name: string
     icon: string
     url: string
-  }[]
+  }>
+  projects: Array<IProject>
 }
