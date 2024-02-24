@@ -14,8 +14,7 @@ const getColors = async () => {
     .then((res) => {
       return res.data
     })
-    .catch((err) => {
-      console.log(err)
+    .catch(() => {
       return []
     })
 }

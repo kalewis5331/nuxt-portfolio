@@ -22,4 +22,28 @@ export const clients = [
       },
     ],
   },
+  {
+    id: 'kalewis5331',
+    clientImages: [
+      {
+        title: 'Nuxt Portfolio Icon',
+        img: '/images/nuxtPortfolioLogo.png',
+      },
+    ],
+    companyInfos: [
+      {
+        title: 'Name',
+        details: 'Kalewis5331',
+      },
+      {
+        title: 'Services',
+        details:
+          "A portfolio website leveraging Nuxt, featuring my github repos/contributions, as well as other projects I'm working on.",
+      },
+      {
+        title: 'Website',
+        details: 'https://github.com/kalewis5331/nuxt-portfolio',
+      },
+    ],
+  },
 ]

@@ -21,11 +21,7 @@ export interface IProject {
   img: string
   publishDate: string
   tag: string
-  clientTitle: string
-  detailsTitle: string
-  techTitle: string
   details: string
-  socialTitle: string
   projectImages: {
     title: string
     img: string
@@ -37,6 +33,10 @@ export interface IProject {
 export interface IProjectState {
   projectsHeading: string
   projectsDescription: string
+  clientTitle: string
+  detailsTitle: string
+  techTitle: string
+  socialTitle: string
   socialSharings: Array<{
     name: string
     icon: string

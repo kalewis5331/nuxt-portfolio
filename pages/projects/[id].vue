@@ -75,7 +75,7 @@ onUpdated(() => {
             <p
               class="font-general-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2"
             >
-              {{ project.clientTitle }}
+              {{ store.clientTitle }}
             </p>
             <ul class="leading-loose">
               <li
@@ -103,7 +103,7 @@ onUpdated(() => {
             <p
               class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ project.techTitle }}
+              {{ store.techTitle }}
             </p>
             <p
               class="font-general-regular text-primary-dark dark:text-ternary-light"
@@ -117,7 +117,7 @@ onUpdated(() => {
             <p
               class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ project.socialTitle }}
+              {{ store.socialTitle }}
             </p>
             <div class="flex items-center gap-3 mt-5">
               <a
@@ -141,7 +141,7 @@ onUpdated(() => {
           <p
             class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
           >
-            {{ project.detailsTitle }}
+            {{ store.detailsTitle }}
           </p>
           <p
             class="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
