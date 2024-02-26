@@ -33,9 +33,10 @@ export default {
         <img v-else src="/images/developer.png" alt="Developer Light" />
       </div>
       <p
-        class="font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center sm:text-left leading-none text-gray-400"
+        class="font-general-medium mt-2 text-medium text-center sm:text-left leading-none text-gray-400"
       >
-        A portfolio of a passionate Full Stack Lead Developer.
+        A portfolio website leveraging Nuxt, featuring my github
+        repos/contributions, as well as other projects I'm working on.
       </p>
       <!--      <div class="flex justify-center sm:block">-->
       <!--        <NuxtLink-->
@@ -55,11 +56,7 @@ export default {
 
     <!-- Banner Right Contents -->
     <div class="w-full md:w-2/3 text-primary-light float-right">
-      <Suspense>
-        <MyGitHub />
-
-        <template #fallback> Loading... </template>
-      </Suspense>
+      <MyGitHub />
     </div>
   </section>
 </template>

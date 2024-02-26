@@ -53,23 +53,18 @@ export default {
     <!-- Projects grid header -->
     <div class="text-center">
       <p
-        class="font-general-semibold text-2xl sm:text-5xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light"
+        class="font-bold text-lg md:text-2xl text-ternary-dark dark:text-primary-light"
       >
         {{ heading }}
       </p>
       <!-- Note: This description is commented out, but if you want to see it, just uncomment this -->
-      <p class="text-lg sm:text-xl text-gray-500 dark:text-ternary-light">
+      <p class="text-medium text-gray-500 dark:text-ternary-light">
         {{ description }}
       </p>
     </div>
 
     <!-- Filter and search projects -->
     <div class="mt-8 sm:mt-10">
-      <h3
-        class="font-general-regular text-center text-secondary-dark dark:text-ternary-light text-md sm:text-xl font-normal mb-4"
-      >
-        Search projects by title or filter by category
-      </h3>
       <div
         class="flex justify-between border-b border-primary-light dark:border-secondary-dark pb-3 gap-2"
       >

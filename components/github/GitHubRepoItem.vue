@@ -1,16 +1,15 @@
 <script>
+import LanguageColor from '~/components/github/LanguageColor.vue'
+
 export default {
   name: 'GithubReposItem',
+  components: { LanguageColor },
   props: {
     repository: {
       type: Object,
       default: () => {
         return {}
       },
-    },
-    bgColor: {
-      type: String,
-      default: undefined,
     },
   },
   data: () => ({
@@ -47,13 +46,7 @@ export default {
       {{ repository.description }}
     </div>
     <div class="mt-auto text-xs flex">
-      <div v-if="repository.language" class="flex items-center mr-4">
-        <span
-          :style="{ backgroundColor: repository.language ? bgColor : '' }"
-          class="w-3 h-3 rounded-full relative"
-        ></span>
-        <span class="pl-2">{{ repository.language }}</span>
-      </div>
+      <LanguageColor :language="repository.language" />
       <div v-if="repository.stargazers_count" class="flex items-center mr-4">
         <svg
           class="w-4 h-4 fill-current mr-2"
