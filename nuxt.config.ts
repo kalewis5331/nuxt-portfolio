@@ -22,6 +22,13 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
+    [
+      'nuxt-graphql-server',
+      {
+        url: '/relative/path/to/your/graphql/endpoint',
+        schema: './server/**/*.graphql',
+      },
+    ],
   ],
   colorMode: {
     classSuffix: '',
