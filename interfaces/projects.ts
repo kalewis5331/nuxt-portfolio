@@ -20,7 +20,6 @@ export interface IProject {
   category: string
   img: string
   publishDate: string
-  tag: string
   details: string
   projectImages: {
     title: string

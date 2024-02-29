@@ -93,19 +93,21 @@ export default {
     </div>
 
     <!-- Projects grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 sm:gap-10">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 sm:gap-10 justify-items-center items-stretch"
+    >
       <div
         v-for="project in filteredProjects"
         :key="project.id"
-        class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
+        class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark w-60"
         aria-label="Single Project"
       >
-        <NuxtLink :to="`/projects/${project.id}`">
+        <NuxtLink :to="`/projects/${project.id}`" class="items-stretch">
           <div>
             <img
               :src="project.img"
               :alt="project.title"
-              class="rounded-t-xl border-none"
+              class="object-fill h-48 w-full"
             />
           </div>
           <div class="text-center px-4 py-6">

@@ -44,7 +44,7 @@ onUpdated(() => {
             ></i>
             <span
               class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-              >{{ project.tag }}</span
+              >{{ project.category }}</span
             >
           </div>
         </div>
@@ -81,7 +81,7 @@ onUpdated(() => {
               <li
                 v-for="(info, index) in project.client.companyInfos"
                 :key="index"
-                class="font-general-regular text-ternary-dark dark:text-ternary-light"
+                class="font-general-regular text-ternary-dark dark:text-ternary-light mb-3"
               >
                 <span class="font-extrabold">{{ info.title }}: </span>
                 <a
@@ -113,27 +113,27 @@ onUpdated(() => {
           </div>
 
           <!-- Single project social sharing -->
-          <div v-if="project">
-            <p
-              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
-            >
-              {{ store.socialTitle }}
-            </p>
-            <div class="flex items-center gap-3 mt-5">
-              <a
-                v-for="(social, index) in store.socialSharings"
-                :key="index"
-                :href="social.url"
-                target="__blank"
-                aria-label="Share Project"
-                class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
-                ><i
-                  :data-feather="social.icon"
-                  class="w-4 lg:w-5 h-4 lg:h-5"
-                ></i
-              ></a>
-            </div>
-          </div>
+          <!--          <div v-if="project">-->
+          <!--            <p-->
+          <!--              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"-->
+          <!--            >-->
+          <!--              {{ store.socialTitle }}-->
+          <!--            </p>-->
+          <!--            <div class="flex items-center gap-3 mt-5">-->
+          <!--              <a-->
+          <!--                v-for="(social, index) in store.socialSharings"-->
+          <!--                :key="index"-->
+          <!--                :href="social.url"-->
+          <!--                target="__blank"-->
+          <!--                aria-label="Share Project"-->
+          <!--                class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"-->
+          <!--                ><i-->
+          <!--                  :data-feather="social.icon"-->
+          <!--                  class="w-4 lg:w-5 h-4 lg:h-5"-->
+          <!--                ></i-->
+          <!--              ></a>-->
+          <!--            </div>-->
+          <!--          </div>-->
         </div>
 
         <!-- Single project right section details -->

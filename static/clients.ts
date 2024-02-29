@@ -46,4 +46,28 @@ export const clients = [
       },
     ],
   },
+  {
+    id: 'Athstat',
+    clientImages: [
+      {
+        title: 'Athstat',
+        img: '/images/athstat.png',
+      },
+    ],
+    companyInfos: [
+      {
+        title: 'Name',
+        details: 'Athstat',
+      },
+      {
+        title: 'Services',
+        details:
+          'ATHSTAT breaks down data barriers, providing AI-driven stats and insights to athletes, coaches and fans. Optimize Performance. Share Data. Monetize.',
+      },
+      {
+        title: 'Website',
+        details: 'https://www.athstat.io/',
+      },
+    ],
+  },
 ]

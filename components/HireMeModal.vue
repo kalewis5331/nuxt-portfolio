@@ -1,5 +1,5 @@
 <script>
-import feather from 'feather-icons'
+import { replace } from 'feather-icons'
 import MyButton from './reusable/MyButton.vue'
 export default {
   components: { MyButton },
@@ -10,7 +10,7 @@ export default {
     }
   },
   mounted() {
-    feather.replace()
+    replace()
   },
   methods: {},
 }
