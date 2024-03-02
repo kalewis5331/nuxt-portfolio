@@ -35,4 +35,10 @@ export default defineNuxtConfig({
     preference: 'dark', // default value of $colorMode.preference
     fallback: 'dark', // fallback value if not system preference found
   },
+  runtimeConfig: {
+    // The private keys which are only available server-side
+    ghToken: 'placeholder',
+    personalGHUrl: 'user/repos',
+    professionalGHUrl: 'users/kalewis5331/repos',
+  },
 })

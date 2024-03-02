@@ -29,8 +29,10 @@ const server = new ApolloServer({
 export default startServerAndCreateH3Handler<DataSourceContext>(server, {
   // eslint-disable-next-line require-await
   context: async () => {
+    const { cache } = server
+    const token = useRuntimeConfig().ghToken
     return {
-      dataSources: { ghAPI: new GitHubAPI() },
+      dataSources: { ghAPI: new GitHubAPI({ token, cache }) },
     }
   },
 })
