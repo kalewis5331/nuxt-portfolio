@@ -27,8 +27,7 @@ export class GitHubAPI extends RESTDataSource {
       .then((repos) => {
         return repos.flat()
       })
-      .catch((err) => {
-        console.log(err)
+      .catch(() => {
         return []
       })
   }

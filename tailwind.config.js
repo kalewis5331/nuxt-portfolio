@@ -1,6 +1,6 @@
 // import colors from 'tailwindcss/colors'
 
-export const purge = [
+export const content = [
   './components/**/*.{vue,js}',
   './layouts/**/*.vue',
   './pages/**/*.vue',
