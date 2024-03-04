@@ -22,18 +22,12 @@ export default {
 <template>
   <section class="flex flex-col sm:justify-between sm:flex-row mt-12 sm:mt-10">
     <!-- Banner Left Contents -->
-    <div class="w-full md:w-1/3 text-left">
-      <div>
-        <img
-          v-if="$colorMode.value === 'dark'"
-          src="/images/developer.png"
-          alt="Developer Dark"
-          class="h-auto"
-        />
-        <img v-else src="/images/developer.png" alt="Developer Light" />
+    <div class="w-1/3 md:w-1/3 text-left">
+      <div class="w-3/4">
+        <img src="/images/profile.jpg" alt="Developer Light" />
       </div>
       <p
-        class="font-general-medium mt-2 text-medium text-center sm:text-left leading-none text-gray-400"
+        class="w-3/4 font-general-medium mt-2 text-medium text-center sm:text-left leading-none text-gray-400"
       >
         A portfolio website leveraging Nuxt, featuring my github
         repos/contributions, as well as other projects I'm working on.

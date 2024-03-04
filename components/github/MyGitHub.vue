@@ -28,7 +28,7 @@ const filteredRepos =
 </script>
 
 <template>
-  <div class="container h-96 overflow-y-auto">
+  <div class="max-w-full h-96 overflow-y-auto">
     <header class="pt-4">
       <h2
         class="font-bold text-lg md:text-2xl text-ternary-dark dark:text-primary-light"
@@ -38,13 +38,9 @@ const filteredRepos =
     </header>
     <div
       v-if="repos && filteredRepos && filteredRepos.length > 0"
-      class="flex flex-wrap pt-4 md:-mr-6"
+      class="grid grid-cols-3 gap-5 pt-4 w-full pr-5"
     >
-      <div
-        v-for="repo in filteredRepos"
-        :key="repo.id"
-        class="w-full md:w-1/2 lg:w-1/2 md:pr-6 pb-4"
-      >
+      <div v-for="repo in filteredRepos" :key="repo.id" class="">
         <GithubReposItem :repository="repo" />
       </div>
     </div>

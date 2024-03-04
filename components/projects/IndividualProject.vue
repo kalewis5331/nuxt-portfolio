@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { replace } from 'feather-icons'
-import ProjectRelatedProjects from '../../components/projects/ProjectRelatedProjects.vue'
 import type { IProject } from '~/interfaces/projects'
 import { useProjectStore } from '~/store'
 const route = useRoute()
@@ -124,7 +123,6 @@ onUpdated(() => {
           </div>
         </div>
       </div>
-      <ProjectRelatedProjects />
     </div>
 
     <!-- Project related projects -->
