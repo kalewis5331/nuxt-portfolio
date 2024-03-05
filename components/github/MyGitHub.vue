@@ -28,8 +28,8 @@ const filteredRepos =
 </script>
 
 <template>
-  <div class="max-w-full h-96 overflow-y-auto">
-    <header class="pt-4">
+  <div class="max-w-full h-full overflow-y-auto">
+    <header>
       <h2
         class="font-bold text-lg md:text-2xl text-ternary-dark dark:text-primary-light"
       >

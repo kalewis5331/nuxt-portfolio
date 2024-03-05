@@ -14,6 +14,16 @@ export const projectsState = (): IProjectState => ({
       icon: 'linkedin',
       url: 'https://www.linkedin.com/in/kalewis5331/',
     },
+    {
+      name: 'Indeed',
+      icon: 'briefcase',
+      url: 'https://profile.indeed.com/p/kevinl-k9n2cmz',
+    },
+    {
+      name: 'Github',
+      icon: 'github',
+      url: 'https://github.com/kalewis5331',
+    },
   ],
   projects: [
     {

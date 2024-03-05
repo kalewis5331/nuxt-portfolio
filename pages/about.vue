@@ -17,7 +17,7 @@ export default {
   <div>
     <AboutMe class="container mx-auto" />
 
-    <AboutCounter />
+    <!--    <AboutCounter />-->
   </div>
 </template>
 
