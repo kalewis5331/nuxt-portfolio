@@ -24,20 +24,6 @@ export default {
       this.$colorMode.preference =
         this.$colorMode.value === 'light' ? 'dark' : 'light'
     },
-    showModal() {
-      if (this.modal) {
-        // Stop screen scrolling
-        document
-          .getElementsByTagName('html')[0]
-          .classList.remove('overflow-y-hidden')
-        this.modal = false
-      } else {
-        document
-          .getElementsByTagName('html')[0]
-          .classList.add('overflow-y-hidden')
-        this.modal = true
-      }
-    },
   },
 }
 </script>
@@ -132,7 +118,7 @@ export default {
       </div>
 
       <!-- Header links -->
-      <AppNavigation :is-open="isOpen" :show-modal="showModal" :modal="modal" />
+      <AppNavigation />
 
       <!-- Header right section buttons -->
       <div
@@ -140,7 +126,7 @@ export default {
       >
         <!-- Hire me button -->
         <div class="font-general-medium hidden md:block">
-          <ReUseButton title="Download Resume" />
+          <ReUseButton title="Download Resume" link />
         </div>
 
         <!-- Theme switcher large screen -->

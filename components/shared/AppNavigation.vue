@@ -1,15 +1,8 @@
-<script setup lang="ts">
-interface INav {
-  isOpen: boolean
-  modal: boolean
-}
-const props = defineProps<INav>()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <!-- App header navigation links -->
   <div
-    :class="props.isOpen ? 'block' : 'hidden'"
     class="font-general-regular m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none"
   >
     <NuxtLink
