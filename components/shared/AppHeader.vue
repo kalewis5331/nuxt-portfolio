@@ -3,7 +3,8 @@ import { mapState } from 'pinia'
 import AppNavigation from './AppNavigation.vue'
 import { useProjectStore } from '~/store/index.ts'
 import ReUseButton from '~/components/reusable/MyButton.vue'
-
+const store = useProjectStore()
+const socialSites = store.socialSharings
 export default {
   components: {
     ReUseButton,
@@ -13,6 +14,7 @@ export default {
     return {
       isOpen: false,
       modal: false,
+      socialSites,
     }
   },
 
@@ -126,7 +128,11 @@ export default {
       >
         <!-- Hire me button -->
         <div class="font-general-medium hidden md:block">
-          <ReUseButton title="Download Resume" link />
+          <ReUseButton
+            title="Download Resume"
+            is-link
+            :link="socialSites[1].url"
+          />
         </div>
 
         <!-- Theme switcher large screen -->

@@ -1,8 +1,5 @@
 <script setup>
 import { defineProps } from 'vue'
-import { useProjectStore } from '~/store'
-const store = useProjectStore()
-const socialSites = store.socialSharings
 
 const props = defineProps({
   title: {
@@ -15,8 +12,13 @@ const props = defineProps({
     required: false,
     default: () => {},
   },
-  link: {
+  isLink: {
     type: Boolean,
+    required: true,
+  },
+  link: {
+    default: '',
+    type: String,
     required: true,
   },
 })
@@ -26,20 +28,20 @@ const emit = defineEmits(['onClick'])
 
 <template>
   <div
-    v-if="props.link"
+    v-if="props.isLink"
     class="flex justify-center items-center text-md shadow-lg rounded-lg focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 hover:text-white duration-500 dark:hover:bg-indigo-500 dark:hover:text-white dark:duration-500 text-primary-light dark:text-primary-dark bg-slate-800 border border-indigo-200 dark:border-ternary-dark dark:bg-amber-50 p-2.5 sm:py-3"
   >
-    <button>
-      <NuxtLink :to="socialSites[1].url" target="_blank">{{
-        props.title
-      }}</NuxtLink>
+    <button :aria-label="props.title">
+      <NuxtLink :to="props.link" target="_blank">{{ props.title }}</NuxtLink>
     </button>
   </div>
   <div
     v-else
     class="flex justify-center items-center text-md shadow-lg rounded-lg focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 hover:text-white duration-500 dark:hover:bg-indigo-500 dark:hover:text-white dark:duration-500 text-primary-light dark:text-primary-dark bg-slate-800 border border-indigo-200 dark:border-ternary-dark dark:bg-amber-50 p-2.5 sm:py-3"
   >
-    <button @click="emit('onClick')">{{ props.title }}</button>
+    <button :aria-label="props.title" @click="emit('onClick')">
+      {{ props.title }}
+    </button>
   </div>
   <!--  <div-->
   <!--    v-else-->

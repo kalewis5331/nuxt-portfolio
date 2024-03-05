@@ -15,9 +15,7 @@ export default {
 
     <!-- View more projects button -->
     <div class="mt-5 sm:mt-14 flex justify-center">
-      <NuxtLink to="/projects" aria-label="More Projects">
-        <ReUseButton title="More Projects" />
-      </NuxtLink>
+      <ReUseButton title="More Projects" is-link link="/projects" />
     </div>
   </div>
 </template>
