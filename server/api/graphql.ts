@@ -9,7 +9,7 @@ import { DataSourceContext } from '~/server/context'
 const __dirname = path.resolve()
 
 const typeDefs = gql(
-  readFileSync(path.join(__dirname, './', 'server', 'schema.graphql'), {
+  readFileSync(path.join(__dirname, 'schema.graphql'), {
     encoding: 'utf-8',
   }),
 )
