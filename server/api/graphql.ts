@@ -3,13 +3,15 @@ import path from 'path'
 import { ApolloServer } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '@as-integrations/h3'
 import { gql } from 'graphql-tag'
+import { resolvePath } from '@nuxt/kit'
 import { Resolvers } from '../types'
 import { GitHubAPI } from '~/server/datasources/github-api'
 import { DataSourceContext } from '~/server/context'
-const __dirname = path.resolve()
-
+// const __dirname = path.resolve()
+const entrypoint = await resolvePath('/')
+// const root = path.join(entrypoint, 'server')
 const typeDefs = gql(
-  readFileSync(path.join(__dirname, './', 'server', 'schema.graphql'), {
+  readFileSync(path.join(entrypoint, 'schema.graphql'), {
     encoding: 'utf-8',
   }),
 )
