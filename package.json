@@ -2,6 +2,11 @@
   "name": "nuxt-app",
   "private": true,
   "type": "module",
+  "pnpm": {
+    "overrides": {
+      "vue": "^3.4.19"
+    }
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
