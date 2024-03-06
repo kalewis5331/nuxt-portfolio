@@ -1,5 +1,6 @@
 <script>
-import { replace } from 'feather-icons'
+import pkg from 'feather-icons'
+const { replace } = pkg
 
 export default {
   components: {},

@@ -1,7 +1,8 @@
 <script>
-import { replace } from 'feather-icons'
+import pkg from 'feather-icons'
 import { mapState } from 'pinia'
 import { useProjectStore } from '~/store/index.ts'
+const { replace } = pkg
 
 export default {
   data: () => {

@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { replace } from 'feather-icons'
+import pkg from 'feather-icons'
 import type { IProject } from '~/interfaces/projects'
 import { useProjectStore } from '~/store'
+const { replace } = pkg
 const route = useRoute()
 const store = useProjectStore()
 const project: IProject | undefined = store.getProjectById(route.params.id)

@@ -1,6 +1,7 @@
 <script>
-import { replace } from 'feather-icons'
+import pkg from 'feather-icons'
 import MyGitHub from '../github/MyGitHub.vue'
+const { replace } = pkg
 
 export default {
   components: { MyGitHub },

@@ -23,10 +23,11 @@
 </template>
 
 <script>
-import { replace } from 'feather-icons'
+import pkg from 'feather-icons'
 import AppHeader from '../components/shared/AppHeader.vue'
 import AppFooter from '../components/shared/AppFooter.vue'
 import BackToTop from '../components/BackToTop.vue'
+const { replace } = pkg
 export default {
   components: { AppFooter, BackToTop, AppHeader },
   mounted() {
