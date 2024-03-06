@@ -1,13 +1,13 @@
 <script lang="ts">
 import LanguageColor from '~/components/github/LanguageColor.vue'
-import type { IRepository } from '~/interfaces/github'
+// import type { IRepository } from '~/interfaces/github'
 
 export default {
   name: 'GithubReposItem',
   components: { LanguageColor },
   props: {
     repository: {
-      type: IRepository,
+      type: {},
       default: () => {
         return {}
       },

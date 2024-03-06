@@ -1,6 +1,6 @@
 <script>
-import { replace } from 'feather-icons'
-
+import feather from 'feather-icons'
+const { replace } = feather
 export default {
   components: {},
   data() {
