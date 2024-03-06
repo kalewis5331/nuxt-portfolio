@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import feather from 'feather-icons'
+import { replace } from 'feather-icons'
 import FooterCopyright from './FooterCopyright.vue'
 import { useProjectStore } from '~/store'
-const { replace } = feather
 const store = useProjectStore()
 const socialSites = store.socialSharings
 onMounted(() => {

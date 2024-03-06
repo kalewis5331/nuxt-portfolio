@@ -48,9 +48,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // The private keys which are only available server-side
     ghToken: 'placeholder',
-    public: {
-      personalGHUrl: 'user/repos',
-      professionalGHUrl: 'users/kalewis5331/repos',
-    },
+    personalGHUrl: 'user/repos',
+    professionalGHUrl: 'users/kalewis5331/repos',
   },
 })

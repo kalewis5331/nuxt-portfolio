@@ -1,8 +1,7 @@
 <script>
-import feather from 'feather-icons'
+import { replace } from 'feather-icons'
 import { mapState } from 'pinia'
 import { useProjectStore } from '~/store/index.ts'
-const { replace } = feather
 
 export default {
   data: () => {
