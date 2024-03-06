@@ -1,4 +1,5 @@
 <script lang="ts">
+import type { PropType } from 'vue'
 import LanguageColor from '~/components/github/LanguageColor.vue'
 import type { IRepository } from '~/interfaces/github'
 
@@ -7,7 +8,7 @@ export default {
   components: { LanguageColor },
   props: {
     repository: {
-      type: IRepository,
+      type: Object as PropType<IRepository>,
       default: () => {
         return {}
       },
