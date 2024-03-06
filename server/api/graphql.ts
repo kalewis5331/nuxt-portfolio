@@ -6,9 +6,10 @@ import { gql } from 'graphql-tag'
 import { Resolvers } from '../types'
 import { GitHubAPI } from '~/server/datasources/github-api'
 import { DataSourceContext } from '~/server/context'
+const __dirname = path.resolve()
 
 const typeDefs = gql(
-  readFileSync(path.resolve('./server/', './schema.graphql'), {
+  readFileSync(path.join(__dirname, './', 'server', 'schema.graphql'), {
     encoding: 'utf-8',
   }),
 )
