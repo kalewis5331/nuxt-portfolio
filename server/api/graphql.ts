@@ -1,18 +1,10 @@
-import { readFileSync } from 'fs'
-import path from 'path'
 import { ApolloServer } from '@apollo/server'
 import { startServerAndCreateH3Handler } from '@as-integrations/h3'
-import { gql } from 'graphql-tag'
 import { Resolvers } from '../types'
 import { GitHubAPI } from '~/server/datasources/github-api'
 import { DataSourceContext } from '~/server/context'
-const __dirname = path.resolve()
-
-const typeDefs = gql(
-  readFileSync(path.join(__dirname, 'schema.graphql'), {
-    encoding: 'utf-8',
-  }),
-)
+// @ts-ignore
+import { schema } from '#graphql/schema'
 
 const resolvers: Resolvers = {
   Query: {
@@ -23,7 +15,7 @@ const resolvers: Resolvers = {
 }
 
 const server = new ApolloServer({
-  typeDefs,
+  typeDefs: schema,
   resolvers,
 })
 
