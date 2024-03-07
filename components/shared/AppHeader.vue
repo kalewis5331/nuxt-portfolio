@@ -37,7 +37,7 @@ export default {
       class="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6"
     >
       <!-- Header menu links and small screen hamburger menu -->
-      <div class="flex justify-between items-center px-6 sm:px-0">
+      <div class="flex justify-between items-center px-1 sm:px-0">
         <!-- Header logos -->
         <div>
           <NuxtLink to="/">
@@ -89,34 +89,6 @@ export default {
             />
           </svg>
         </button>
-
-        <!-- Small screen hamburger menu -->
-        <div class="sm:hidden">
-          <button
-            type="button"
-            class="focus:outline-none"
-            aria-label="Hamburger Menu"
-            @click="isOpen = !isOpen"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="h-7 w-7 mt-1 fill-current text-secondary-dark dark:text-ternary-light"
-            >
-              <path
-                v-if="isOpen"
-                fill-rule="evenodd"
-                d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-                clip-rule="evenodd"
-              ></path>
-              <path
-                v-if="!isOpen"
-                fill-rule="evenodd"
-                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-              ></path>
-            </svg>
-          </button>
-        </div>
       </div>
 
       <!-- Header links -->
