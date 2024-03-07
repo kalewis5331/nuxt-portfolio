@@ -33,7 +33,7 @@ export default {
           />
         </div>
         <p
-          class="sm:w-3/4 w-full font-general-medium mt-2 text-medium text-center sm:text-left leading-none text-gray-400"
+          class="w-full font-general-medium mt-2 text-medium text-center sm:text-left leading-none text-gray-400"
         >
           A portfolio website leveraging Nuxt, featuring my github
           repos/contributions, as well as other projects I'm working on.
