@@ -42,7 +42,7 @@ export const clients = [
       },
       {
         title: 'Website',
-        details: 'https://github.com/kalewis5331/nuxt-portfolio',
+        details: 'https://kalewis5331.com',
       },
     ],
   },

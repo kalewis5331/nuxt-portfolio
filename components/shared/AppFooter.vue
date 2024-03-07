@@ -16,7 +16,7 @@ onUpdated(() => {
 <template>
   <div class="container mx-auto">
     <div
-      class="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark"
+      class="sm:pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark"
     >
       <!-- Footer social links -->
       <div class="flex flex-col justify-center items-center mb-12 sm:mb-20">

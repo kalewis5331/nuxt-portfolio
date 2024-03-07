@@ -31,14 +31,14 @@ const filteredRepos =
   <div class="max-w-full h-full overflow-y-auto">
     <header>
       <h2
-        class="font-bold text-lg md:text-2xl text-ternary-dark dark:text-primary-light"
+        class="font-bold text-lg md:text-2xl text-ternary-dark dark:text-primary-light text-center sm:text-left"
       >
         Github Repositories
       </h2>
     </header>
     <div
       v-if="repos && filteredRepos && filteredRepos.length > 0"
-      class="grid grid-cols-3 gap-5 pt-4 w-full pr-5"
+      class="grid sm:grid-cols-3 grid-cols-1 gap-5 pt-4 w-full sm:pr-5"
     >
       <div v-for="repo in filteredRepos" :key="repo.id" class="">
         <GithubReposItem :repository="repo" />
