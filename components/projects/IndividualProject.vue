@@ -16,18 +16,18 @@ onUpdated(() => {
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <div class="container">
     <!-- Check if there are projects and then load -->
     <div v-if="project">
       <!-- Project heading and meta info -->
       <div>
         <p
-          class="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7"
+          class="font-general-medium text-center sm:text-left text-md sm:text-4xl font-bold text-primary-dark dark:text-primary-light sm:mt-20 mb-7"
         >
           {{ project.title }}
         </p>
-        <div class="flex">
-          <div class="flex items-center mr-10">
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+          <div class="flex items-center">
             <i
               data-feather="clock"
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
@@ -50,12 +50,12 @@ onUpdated(() => {
         </div>
       </div>
 
-      <div class="grid grid-cols-2 mt-10">
+      <div class="grid sm:grid-cols-2 mt-10">
         <!-- Single project left section details -->
         <!-- Project gallery -->
         <div class="w-full text-left">
-          <div class="w-1/3">
-            <div v-if="project.projectImages[0]" class="mb-10 sm:mb-0">
+          <div class="sm:w-1/3">
+            <div v-if="project.projectImages[0]" class="mb-10 sm:mb-0 m-auto">
               <img
                 :src="project.projectImages[0].img"
                 class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
@@ -69,7 +69,7 @@ onUpdated(() => {
             <!-- Single project client details -->
             <div v-if="project.client" class="mb-7">
               <p
-                class="font-general-medium text-xl text-secondary-dark dark:text-secondary-light mb-2"
+                class="font-general-medium text-xl text-secondary-dark dark:text-secondary-light mb-2 text-center sm:text-left"
               >
                 {{ store.clientTitle }}
               </p>
@@ -81,6 +81,19 @@ onUpdated(() => {
                 >
                   <span class="font-general-semibold">{{ info.title }}: </span>
                   <a
+                    v-if="info.title === 'Website'"
+                    :href="info.details"
+                    target="_blank"
+                    :class="
+                      info.title === 'Website' || info.title === 'Phone'
+                        ? 'hover:underline cursor-pointer'
+                        : ''
+                    "
+                    aria-label="Project website and phone"
+                    >{{ info.details }}</a
+                  >
+                  <a
+                    v-else
                     href="#"
                     :class="
                       info.title === 'Website' || info.title === 'Phone'
@@ -99,12 +112,12 @@ onUpdated(() => {
         <!-- Single project right section details -->
         <div class="w-full text-primary-light float-right">
           <p
-            class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
+            class="font-general-medium text-primary-dark dark:text-primary-light text-xl sm:text-2xl font-bold mb-7 text-center sm:text-left"
           >
             {{ store.detailsTitle }}
           </p>
           <p
-            class="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
+            class="font-general-regular mb-5 text-ternary-dark dark:text-ternary-light"
           >
             {{ project.details }}
           </p>
@@ -112,12 +125,12 @@ onUpdated(() => {
           <!-- Single project technologies -->
           <div v-if="project" class="mb-7">
             <p
-              class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
+              class="font-general-medium text-xl sm:text-2xl text-ternary-dark dark:text-ternary-light mb-2 text-center sm:text-left"
             >
               {{ store.techTitle }}
             </p>
             <p
-              class="font-general-regular text-lg text-primary-dark dark:text-ternary-light"
+              class="font-general-regular text-primary-dark dark:text-ternary-light"
             >
               {{ project.technologies.join(', ') }}
             </p>

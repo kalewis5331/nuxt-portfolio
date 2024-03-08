@@ -36,7 +36,7 @@ export const projectsState = (): IProjectState => ({
         "A portfolio website leveraging Nuxt, featuring my github repos/contributions, as well as other projects I'm working on.",
       projectImages: [
         {
-          title: 'Otasku Spam Blocker Icon',
+          title: 'Nuxt Portfolio Icon',
           img: '/images/nuxtPortfolioLogo.png',
         },
       ],
@@ -47,7 +47,10 @@ export const projectsState = (): IProjectState => ({
         'Tailwindcss',
         'TypeScript',
         'JavaScript',
+        'GraphQL',
         'Pinia',
+        'Netlify',
+        'Vercel',
       ],
     },
     {
