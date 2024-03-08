@@ -98,7 +98,7 @@ export default {
             <img
               :src="project.img"
               :alt="project.title"
-              class="object-fill sm:h-48 sm:w-full"
+              class="h-60 sm:h-48 w-full bg-black"
             />
           </div>
           <div class="text-center px-4 py-6">
