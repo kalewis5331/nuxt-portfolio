@@ -1,6 +1,7 @@
 type Query {
     "Personal Repos."
     repos: [Repository!]!
+    repo(id: Int!): Repository
 }
 
 type Owner {

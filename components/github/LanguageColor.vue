@@ -36,6 +36,8 @@ onUnmounted(() => {
       :style="{ backgroundColor: language ? color : '' }"
       class="w-3 h-3 rounded-full relative"
     ></span>
-    <span class="pl-2">{{ language }}</span>
+    <span class="pl-2 text-primary-dark dark:text-primary-light">{{
+      language
+    }}</span>
   </div>
 </template>

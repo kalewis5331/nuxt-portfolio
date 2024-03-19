@@ -1,6 +1,7 @@
 import { AugmentedRequest, RESTDataSource } from '@apollo/datasource-rest'
 import { KeyValueCache } from '@apollo/utils.keyvaluecache'
 import { Repository } from '~/server/types'
+import { IRepository } from '~/interfaces/github'
 
 export class GitHubAPI extends RESTDataSource {
   baseURL = 'https://api.github.com/'
@@ -30,5 +31,11 @@ export class GitHubAPI extends RESTDataSource {
       .catch(() => {
         return []
       })
+  }
+
+  async getGHRepoById(repoId: number): Promise<Repository | null> {
+    const repos = await this.getGHRepos()
+    const repo = repos.find((item: Repository) => item.id === repoId)
+    return repo || null
   }
 }

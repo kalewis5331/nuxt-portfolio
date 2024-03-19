@@ -11,6 +11,9 @@ const resolvers: Resolvers = {
     repos: (_: any, __: any, { dataSources }) => {
       return dataSources.ghAPI.getGHRepos()
     },
+    repo: (_: any, args: { id: number }, { dataSources }) => {
+      return dataSources.ghAPI.getGHRepoById(args.id)
+    },
   },
 }
 

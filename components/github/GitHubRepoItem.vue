@@ -36,13 +36,17 @@ export default {
       >
         <path fill-rule="evenodd" :d="icon.book"></path>
       </svg>
-      <a
-        :href="repository.html_url"
-        target="_blank"
+      <NuxtLink
+        :to="`/github/${repository.id}`"
         class="font-medium text-purple-800 dark:text-purple-200"
       >
         {{ repository.name }}
-      </a>
+      </NuxtLink>
+      <i
+        v-if="repository.private"
+        data-feather="lock"
+        class="w-2 sm:w-4 h-2 sm:h-4 ml-2"
+      ></i>
     </div>
     <div class="text-xs mt-2 mb-4">
       {{ repository.description }}
