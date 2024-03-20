@@ -37,11 +37,15 @@ export default {
         <path fill-rule="evenodd" :d="icon.book"></path>
       </svg>
       <NuxtLink
+        v-if="!repository.private"
         :to="`/github/${repository.id}`"
         class="font-medium text-purple-800 dark:text-purple-200"
       >
         {{ repository.name }}
       </NuxtLink>
+      <p v-else class="font-medium text-purple-800 dark:text-purple-200">
+        {{ repository.name }}
+      </p>
       <i
         v-if="repository.private"
         data-feather="lock"

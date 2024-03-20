@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import pkg from 'feather-icons'
-import type { IRepository } from '~/interfaces/github'
+import { Chart, registerables } from 'chart.js'
+import { onMounted } from 'vue'
+import ChartDataLabels from 'chartjs-plugin-datalabels'
+import type { IRepository, LanguageTrending } from '~/interfaces/github'
 import LanguageColor from '~/components/github/LanguageColor.vue'
+import * as untypedColors from '~/static/colors.json'
+const colors: LanguageTrending = untypedColors
 const { replace } = pkg
 const route = useRoute()
 const repositoryId = route.params.id
@@ -19,6 +24,7 @@ const query = `
       created_at
       visibility
       topics
+      languages_url
     }
   }
 `
@@ -50,7 +56,87 @@ const icon = {
   fork: 'M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z',
 }
 
+const repoLangs = await useFetch(repo.languages_url).then((res) => {
+  return res.data.value
+})
+const langsArray = Object.keys(repoLangs || {})
+const values = Object.values(repoLangs || {})
+
+const getLanguageColor = (language: string): string => {
+  if (language && colors) {
+    return colors[language]?.color
+  } else {
+    return '#ffffff'
+  }
+}
+
+const labelColors: string[] = langsArray.map((lang) => {
+  return getLanguageColor(lang)
+})
+
+// Chart Creation
+// Define a reactive variable to hold the chart instance
+const totalSum = values.reduce((sum, num) => sum + num, 0)
+const percentages = values.map((value) => (value / totalSum) * 100)
+
+Chart.defaults.color = '#000'
+const chartData = {
+  labels: langsArray,
+  datasets: [
+    {
+      label: 'Repository Language Utilization',
+      data: percentages,
+      backgroundColor: labelColors,
+      borderColor: labelColors,
+      borderWidth: 1,
+    },
+  ],
+}
+
+// noinspection JSUnusedGlobalSymbols
+const chartOptions = {
+  scales: {
+    y: {
+      beginAtZero: true,
+      ticks: {
+        min: 0,
+        max: 100,
+        callback: function (value: any) {
+          return value + '%'
+        },
+      },
+      scaleLabel: {
+        display: true,
+        labelString: 'Percentage',
+      },
+    },
+  },
+  plugins: {
+    datalabels: {
+      formatter: function (value: number) {
+        return value.toFixed(2) + '%'
+      },
+    },
+  },
+}
+// Define a reactive variable to hold the chart instance
+const chartInstance = ref<any>(null)
+Chart.register(...registerables)
+
 onMounted(() => {
+  const canvas = document.getElementById('languages') as HTMLCanvasElement
+  if (canvas) {
+    const ctx = canvas.getContext('2d')
+    if (ctx) {
+      chartInstance.value = new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+        options: chartOptions,
+        plugins: [ChartDataLabels],
+      })
+    }
+  }
+
   replace()
 })
 onUpdated(() => {
@@ -119,35 +205,53 @@ onUpdated(() => {
                 Details
               </p>
               <!-- Single project client details -->
+
               <div
                 class="font-general-regular text-ternary-dark dark:text-ternary-light mb-1"
               >
-                <p><strong>Description: </strong>{{ repo.description }}</p>
+                <p>
+                  <b class="font-general-bold">Description: </b
+                  >{{ repo.description }}
+                </p>
               </div>
               <div
                 v-if="repo.topics.length > 0"
                 class="font-general-regular text-ternary-dark dark:text-ternary-light mb-1"
               >
-                <p><strong>Topics: </strong>{{ repo.topics }}</p>
+                <p>
+                  <b class="font-general-bold">Topics: </b>{{ repo.topics }}
+                </p>
               </div>
               <div
                 class="font-general-regular text-ternary-dark dark:text-ternary-light mb-1"
               >
                 <p class="capitalize">
-                  <strong>Visibility: </strong>{{ repo.visibility }}
+                  <b class="font-general-bold">Visibility: </b
+                  >{{ repo.visibility }}
                 </p>
               </div>
+            </div>
+            <div class="w-full">
+              <a
+                :href="repo.html_url"
+                target="__blank"
+                class="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100"
+              >
+                <i data-feather="github" class="w-6 sm:w-8 h-6 sm:h-8"></i>
+              </a>
             </div>
           </div>
 
           <!-- Single project right section details -->
           <div class="w-full text-primary-light float-right">
             <p
-              class="font-general-medium text-primary-dark dark:text-primary-light text-xl sm:text-2xl font-bold mb-7 text-center sm:text-left"
+              class="font-general-medium text-primary-dark dark:text-primary-light text-xl sm:text-2xl font-bold mb-7 text-center"
             >
               Languages
             </p>
-            <img alt="Insert Graph" src="" />
+            <div>
+              <canvas id="languages" ref="languages" class="bg-white"></canvas>
+            </div>
           </div>
         </div>
       </div>

@@ -104,3 +104,12 @@ export interface IRepository {
   watchers: number
   default_branch: string
 }
+
+export type LanguageTrending = {
+  [language: string]: {
+    color: string
+    url: string
+  }
+}
+
+export type LanguageStats = Record<string, number>
