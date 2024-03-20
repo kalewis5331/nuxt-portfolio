@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import pkg from 'feather-icons'
+import { FormatDate } from '../shared/DateParser'
 import type { IProject } from '~/interfaces/projects'
 import { useProjectStore } from '~/store'
+import BackButton from '~/components/reusable/BackButton.vue'
+
 const { replace } = pkg
 const route = useRoute()
 const store = useProjectStore()
@@ -17,12 +20,13 @@ onUpdated(() => {
 
 <template>
   <div class="container">
+    <BackButton />
     <!-- Check if there are projects and then load -->
     <div v-if="project">
       <!-- Project heading and meta info -->
       <div>
         <p
-          class="font-general-medium text-center sm:text-left text-md sm:text-4xl font-bold text-primary-dark dark:text-primary-light sm:mt-20 mb-7"
+          class="font-general-medium text-center sm:text-left text-md sm:text-4xl font-bold text-primary-dark dark:text-primary-light mb-7"
         >
           {{ project.title }}
         </p>
@@ -34,7 +38,7 @@ onUpdated(() => {
             ></i>
             <span
               class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-              >{{ project.publishDate }}</span
+              >{{ FormatDate(project.publishDate) }}</span
             >
           </div>
           <div class="flex items-center">

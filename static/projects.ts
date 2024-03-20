@@ -1,5 +1,6 @@
 import type { IProjectState } from '~/interfaces/projects'
 import { clients } from '~/static/clients'
+import { ParseDate } from '~/components/shared/DateParser'
 
 export const projectsState = (): IProjectState => ({
   projectsHeading: 'Projects Portfolio',
@@ -31,7 +32,7 @@ export const projectsState = (): IProjectState => ({
       title: 'Nuxt Portfolio Website',
       category: 'Web Application',
       img: '/images/nuxtPortfolioLogo.png',
-      publishDate: 'Mar, 2024',
+      publishDate: ParseDate('3/1/2024'),
       details:
         "A portfolio website leveraging Nuxt, featuring my github repos/contributions, as well as other projects I'm working on.",
       projectImages: [
@@ -58,7 +59,7 @@ export const projectsState = (): IProjectState => ({
       title: 'Otasku Spam Blocker',
       category: 'Mobile Application',
       img: '/images/OtaskuSpamBlocker.png',
-      publishDate: 'Mar, 2020',
+      publishDate: ParseDate('3/1/2020'),
       details:
         'A small anime-styled Spam Blocker that blocks spam, unwanted, and unknown callers.',
       projectImages: [
@@ -75,7 +76,7 @@ export const projectsState = (): IProjectState => ({
       title: 'Otasku Web and Mobile Application ',
       category: 'Web Application',
       img: '/images/otasku.png',
-      publishDate: '2019',
+      publishDate: ParseDate('1/1/2019'),
       details:
         'Main website for Otasku featuring anime-style task apps. Leverages React Native and Amplify.',
       projectImages: [
@@ -109,7 +110,7 @@ export const projectsState = (): IProjectState => ({
       title: 'Athstat',
       category: 'Web Application',
       img: '/images/athstat.png',
-      publishDate: '2020',
+      publishDate: ParseDate('1/1/2020'),
       details:
         'ATHSTAT breaks down data barriers, providing AI-driven stats and insights to athletes, coaches and fans. Optimize Performance. Share Data. Monetize.',
       projectImages: [
@@ -137,7 +138,7 @@ export const projectsState = (): IProjectState => ({
       title: 'Athstat (Mobile)',
       category: 'Mobile Application',
       img: '/images/athstat.png',
-      publishDate: '2022',
+      publishDate: ParseDate('1/1/2022'),
       details:
         'ATHSTAT breaks down data barriers, providing AI-driven stats and insights to athletes, coaches and fans. Optimize Performance. Share Data. Monetize.',
       projectImages: [
@@ -163,7 +164,7 @@ export const projectsState = (): IProjectState => ({
       title: 'Amazing Tasks',
       category: 'Mobile Application',
       img: '/images/amazingTasks.png',
-      publishDate: '2017',
+      publishDate: ParseDate('1/1/2017'),
       details:
         'Otasku App that helps keep track of daily tasks, leveraging Android.',
       projectImages: [
@@ -188,7 +189,7 @@ export const projectsState = (): IProjectState => ({
       title: 'Finances with Blend-S',
       category: 'Mobile Application',
       img: '/images/fwbs.png',
-      publishDate: '2017',
+      publishDate: ParseDate('1/1/2017'),
       details: 'An Otasku Android app that calculates tips and discounts.',
       projectImages: [
         {
@@ -205,6 +206,32 @@ export const projectsState = (): IProjectState => ({
         'Android Studios',
         'Xcode',
         'AWS Farms',
+      ],
+    },
+    {
+      id: '7',
+      title: 'GitHub Data Utilization (Python)',
+      category: 'Web Application',
+      img: '/images/PythonPortfolioLogo.png',
+      publishDate: ParseDate('3/10/2024'),
+      details:
+        'A project that visualizes the total utilization of coding languages throughout my GitHub Repositories. Leverages Python and a few resources/libraries.',
+      projectImages: [
+        {
+          title: 'Python Portfolio Icon',
+          img: '/images/PythonPortfolioLogo.png',
+        },
+      ],
+      client: clients[1],
+      technologies: [
+        'Python',
+        'Numpy',
+        'Pandas',
+        'FastAPI',
+        'Matplotlib',
+        'Docker',
+        'Fly.io',
+        'Docker',
       ],
     },
   ],

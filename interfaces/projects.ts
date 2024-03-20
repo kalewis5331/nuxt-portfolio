@@ -12,7 +12,7 @@ export interface IProject {
   title: string
   category: string
   img: string
-  publishDate: string
+  publishDate: Date
   details: string
   projectImages: {
     title: string

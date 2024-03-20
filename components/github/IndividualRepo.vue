@@ -6,6 +6,8 @@ import ChartDataLabels from 'chartjs-plugin-datalabels'
 import type { IRepository, LanguageTrending } from '~/interfaces/github'
 import LanguageColor from '~/components/github/LanguageColor.vue'
 import * as untypedColors from '~/static/colors.json'
+import BackButton from '~/components/reusable/BackButton.vue'
+
 const colors: LanguageTrending = untypedColors
 const { replace } = pkg
 const route = useRoute()
@@ -147,11 +149,12 @@ onUpdated(() => {
 <template>
   <div class="container">
     <!-- Check if there are projects and then load -->
+    <BackButton />
     <div v-if="repo">
       <!-- Project heading and meta info -->
       <div>
         <p
-          class="font-general-medium text-center sm:text-left text-md sm:text-4xl font-bold text-primary-dark dark:text-primary-light sm:mt-20 mb-7"
+          class="font-general-medium text-center sm:text-left text-md sm:text-4xl font-bold text-primary-dark dark:text-primary-light mb-7"
         >
           {{ repo.name }}
         </p>

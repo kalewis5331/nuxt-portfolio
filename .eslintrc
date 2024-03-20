@@ -9,11 +9,18 @@
   },
   "extends": [
     "@nuxtjs/eslint-config-typescript",
-    "prettier"
+    "prettier",
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
   ],
   "rules": {
     "import/no-named-as-default-member": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "no-undef": "off",
+    "import/named": "warn",
+    "no-unused-vars": "warn"
+
   },
   "plugins": ["prettier"]
 }

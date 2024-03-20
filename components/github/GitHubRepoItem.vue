@@ -28,7 +28,7 @@ export default {
   <div
     class="border h-full rounded p-4 flex flex-col text-ternary-dark dark:text-primary-light"
   >
-    <div class="flex items-center">
+    <div class="flex">
       <svg
         viewBox="0 0 16 16"
         class="w-4 h-4 fill-current mr-2"
@@ -50,7 +50,8 @@ export default {
         v-if="repository.private"
         data-feather="lock"
         class="w-2 sm:w-4 h-2 sm:h-4 ml-2"
-      ></i>
+        >Private</i
+      >
     </div>
     <div class="text-xs mt-2 mb-4">
       {{ repository.description }}
