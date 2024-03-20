@@ -20,11 +20,17 @@ export default {
     ...mapState(useProjectStore, {
       filteredProjects() {
         if (this.selectedProject) {
-          return this.filterProjectsByCategory()
+          return this.filterProjectsByCategory().sort(
+            (a, b) => b.publishDate.getTime() - a.publishDate.getTime(),
+          )
         } else if (this.searchProject) {
-          return this.filterProjectsBySearch()
+          return this.filterProjectsBySearch().sort(
+            (a, b) => b.publishDate.getTime() - a.publishDate.getTime(),
+          )
         }
-        return this.projects
+        return this.projects.sort(
+          (a, b) => b.publishDate.getTime() - a.publishDate.getTime(),
+        )
       },
       heading: 'projectsHeading',
       description: 'projectsDescription',

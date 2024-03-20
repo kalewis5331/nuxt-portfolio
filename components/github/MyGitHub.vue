@@ -11,6 +11,7 @@ const query = `
       stargazers_count
       forks
       html_url
+      private
     }
   }
 `
