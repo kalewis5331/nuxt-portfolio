@@ -13,6 +13,7 @@ export interface IProject {
   category: string
   img: string
   publishDate: Date
+  link?: string
   details: string
   projectImages: {
     title: string

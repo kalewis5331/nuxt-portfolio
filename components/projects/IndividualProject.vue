@@ -69,7 +69,7 @@ onUpdated(() => {
           </div>
 
           <!-- Project info -->
-          <div class="block sm:flex gap-0 sm:gap-10 mt-4">
+          <div class="block sm:flex gap-0 sm:gap-10 mt-4 sm:w-2/3">
             <!-- Single project client details -->
             <div v-if="project.client" class="mb-7">
               <p
@@ -96,17 +96,9 @@ onUpdated(() => {
                     aria-label="Project website and phone"
                     >{{ info.details }}</a
                   >
-                  <a
-                    v-else
-                    href="#"
-                    :class="
-                      info.title === 'Website' || info.title === 'Phone'
-                        ? 'hover:underline cursor-pointer'
-                        : ''
-                    "
-                    aria-label="Project website and phone"
-                    >{{ info.details }}</a
-                  >
+                  <a v-else href="#" aria-label="Project website and phone">{{
+                    info.details
+                  }}</a>
                 </li>
               </ul>
             </div>
@@ -137,6 +129,25 @@ onUpdated(() => {
               class="font-general-regular text-primary-dark dark:text-ternary-light"
             >
               {{ project.technologies.join(', ') }}
+            </p>
+          </div>
+
+          <div v-if="project.link" class="mb-7">
+            <p
+              class="font-general-medium text-xl sm:text-2xl text-ternary-dark dark:text-ternary-light mb-2 text-center sm:text-left"
+            >
+              Project Link
+            </p>
+            <p
+              class="font-general-regular text-primary-dark dark:text-ternary-light"
+            >
+              Check it out
+              <a
+                class="hover:underline cursor-pointer"
+                :href="project.link"
+                target="__blank"
+                >Here!</a
+              >
             </p>
           </div>
         </div>
