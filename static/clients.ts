@@ -38,7 +38,7 @@ export const clients = [
       {
         title: 'Services',
         details:
-          "A portfolio website leveraging Nuxt, featuring my github repos/contributions, as well as other projects I'm working on.",
+          'Creating useful and entertaining projects that enable me to learn/utilize various languages and frameworks.',
       },
       {
         title: 'Website',
