@@ -31,4 +31,10 @@ export class GitHubAPI extends RESTDataSource {
         return []
       })
   }
+
+  async getGHRepoById(repoId: number): Promise<Repository | null> {
+    const repos = await this.getGHRepos()
+    const repo = repos.find((item: Repository) => item.id === repoId)
+    return repo || null
+  }
 }

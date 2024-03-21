@@ -4,12 +4,16 @@ import { Resolvers } from '../types'
 import { GitHubAPI } from '~/server/datasources/github-api'
 import { DataSourceContext } from '~/server/context'
 // @ts-ignore
+// eslint-disable-next-line import/no-unresolved
 import { schema } from '#graphql/schema'
 
 const resolvers: Resolvers = {
   Query: {
     repos: (_: any, __: any, { dataSources }) => {
       return dataSources.ghAPI.getGHRepos()
+    },
+    repo: (_: any, args: { id: number }, { dataSources }) => {
+      return dataSources.ghAPI.getGHRepoById(args.id)
     },
   },
 }
