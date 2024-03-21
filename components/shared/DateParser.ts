@@ -8,7 +8,6 @@ export function ParseDate(dateString: string): Date {
 
   // Check if all parts are valid integers
   if (isNaN(month) || isNaN(day) || isNaN(year)) {
-    console.error('Invalid date format')
     return new Date(year, month - 1, day)
   }
 

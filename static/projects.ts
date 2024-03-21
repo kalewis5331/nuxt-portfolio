@@ -33,6 +33,7 @@ export const projectsState = (): IProjectState => ({
       category: 'Web Application',
       img: '/images/nuxtPortfolioLogo.png',
       publishDate: ParseDate('3/1/2024'),
+      link: 'https://kalewis5331.com/',
       details:
         "A portfolio website leveraging Nuxt, featuring my github repos/contributions, as well as other projects I'm working on.",
       projectImages: [
@@ -111,6 +112,7 @@ export const projectsState = (): IProjectState => ({
       category: 'Web Application',
       img: '/images/athstat.png',
       publishDate: ParseDate('1/1/2020'),
+      link: 'https://www.athstat.io/',
       details:
         'ATHSTAT breaks down data barriers, providing AI-driven stats and insights to athletes, coaches and fans. Optimize Performance. Share Data. Monetize.',
       projectImages: [
@@ -214,6 +216,7 @@ export const projectsState = (): IProjectState => ({
       category: 'Web Application',
       img: '/images/PythonPortfolioLogo.png',
       publishDate: ParseDate('3/10/2024'),
+      link: 'https://fastapi.kalewis5331.com/',
       details:
         'A project that visualizes the total utilization of coding languages throughout my GitHub Repositories. Leverages Python and a few resources/libraries.',
       projectImages: [
