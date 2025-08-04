@@ -2,9 +2,8 @@
 
 A portfolio website leveraging Nuxt, featuring my GitHub repos/contributions, as well as other projects I'm working on!
 
-## Demo URL
-
-Coming Soon!
+## Run
+    npm run dev -- -o
 
 ## Features
 

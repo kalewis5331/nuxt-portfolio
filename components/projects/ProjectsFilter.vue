@@ -7,7 +7,7 @@ export default {
     },
     selectOptions: {
       type: Array,
-      default: () => ['Web Application', 'Mobile Application'],
+      default: () => ['Web Application', 'Mobile Application', 'Memos & Case Studies'],
     },
   },
   emits: ['change'],

@@ -2,9 +2,7 @@
 import { useProjectStore } from '~/store'
 const store = useProjectStore()
 const socialSites = store.socialSharings
-const aboutMe = `I'm Kevin, a Lead Developer with 10 years of extensive experience developing and
-        maintaining web applications using modern technologies such as React, Typescript, Node.js,
-        MongoDB, PostgresQL, Docker, and Amazon Web Services. Expert in supervising multiple teams of developers and dev-ops engineers of all levels. If you believe
+const aboutMe = `Strategic technology leader with a proven track record in cloud operations, delivery management, and infrastructure optimization. Currently expanding into AI ethics and FinOps to align technical excellence with fiscal and ethical responsibility. Experienced in managing cross-functional teams, reducing cloud waste, and leading secure, scalable deployments in GovCloud AWS. Adept at translating complex technical challenges into actionable business outcomes, with a strong focus on transparency, stakeholder collaboration, and sustainable innovation. If you believe
         my experience and expertise would be a great fit, you can reach me via one of the methods below!`
 </script>
 

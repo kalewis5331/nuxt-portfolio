@@ -237,5 +237,62 @@ export const projectsState = (): IProjectState => ({
         'Docker',
       ],
     },
+    {
+      id: '8',
+      title: 'Optimizing Ethical AI Deployment: A FinOps Case Study for OtakuAI – A Small-Scale AI Project',
+      category: 'Memos & Case Studies',
+      img: '/images/FinOpsOtakuAi_512.png',
+      publishDate: ParseDate('8/1/2024'),
+      link: 'https://glowing-algebra-8dd.notion.site/Optimizing-Ethical-AI-Deployment-A-FinOps-Case-Study-for-OtakuAI-A-Small-Scale-AI-Project-241ee8537960808dae8ad7a980557423?source=copy_link/',
+      details:
+        'A self-directed simulation exploring how AWS FinOps tools and architectural changes can reduce real-time inference costs by over 90% for a generative AI recommendation system.',
+      projectImages: [
+        {
+          title: 'Ethical AI Icon',
+          img: '/images/FinOpsOtakuAi_512.png',
+        },
+      ],
+      client: clients[0],
+      technologies: [
+        'Notion',
+        'AWS Cost Explorer',
+        'AWS Pricing Calculator',
+        'AWS Billing Dashboard',
+        'AWS Lambda',
+        'AWS CloudWatch',
+        'AWS S3',
+        'AWS GovCloud',
+        'FinOps Principles',
+        'GitHub Projects',
+        'React',
+        'Java',
+        'Python',
+      ],
+    },
+    {
+      id: '9',
+      title: 'AI Ethics Risk Memo: Grok and the Challenge of Antisemitism in LLMs',
+      category: 'Memos & Case Studies',
+      img: '/images/EthicsMemoGrok_512.png',
+      publishDate: ParseDate('8/1/2025'),
+      link: 'https://glowing-algebra-8dd.notion.site/AI-Ethics-Risk-Memo-Grok-and-the-Challenge-of-Antisemitism-in-LLMs-231ee8537960808abaf8c9acaddb432d?source=copy_link/',
+      details:
+        'A structured, independent risk analysis of xAI’s Grok-3 language model using the NIST AI Risk Management Framework and OECD AI Principles to identify and address harms related to antisemitic outputs.',
+      projectImages: [
+        {
+          title: 'Ethics Risk Memo Icon',
+          img: '/images/EthicsMemoGrok_512.png',
+        },
+      ],
+      client: clients[1],
+      technologies: [
+        'Notion',
+        'NIST Risk Management Framework (RMF)',
+        'OECD AI Principles',
+        'AI Risk Register',
+        'Policy Analysis',
+        'AI Governance Practices',
+      ],
+    },
   ],
 })
